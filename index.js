@@ -8,7 +8,7 @@
     ctx.strokeStyle = "#BADA55"
     ctx.lineJoin = "round"
     ctx.lineCap = "round"
-    ctx.lineWidth = 15
+    ctx.lineWidth = 100
 
     document.addEventListener("mousemove", draw)
     document.addEventListener("mousedown", handleMouseDown)
