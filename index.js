@@ -1,5 +1,6 @@
 (function() {
     const canvas = document.getElementById("canvas")
+    const tip = document.getElementById("tip")
     const ctx = canvas.getContext("2d")
     
     canvas.width = window.innerWidth
@@ -12,6 +13,7 @@
 
     document.addEventListener("mousemove", draw)
     document.addEventListener("mousedown", handleMouseDown)
+    document.addEventListener("mousedown", removeTip)
     document.addEventListener("mouseup", () => isDrawing = false)
     document.addEventListener("mouseout", () => isDrawing = false)
 
@@ -68,5 +70,10 @@
         let newColor = currentColor.substring(0, randomIndex1) + newHexValue1 + currentColor.substring(randomIndex1+1, randomIndex2) + newHexValue2 + currentColor.substring(randomIndex2+1)
 
         return newColor
+    }
+
+    function removeTip() {
+        tip.style.display = "none"
+        document.removeEventListener("mousedown", removeTip)
     }
 })()
